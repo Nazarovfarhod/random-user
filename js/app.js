@@ -5,7 +5,7 @@ const deleteBtn = document.getElementById("delete__btn");
 const clearBtn = document.getElementById("clear__button");
 
 //refresh
-form.addEventListener("click", (e) => {
+formButton.addEventListener("click", (e) => {
   e.preventDefault();
   reload();
   clearBtn.classList.remove("hidden");
@@ -22,8 +22,8 @@ clearBtn.addEventListener("click", (e) => {
 //search by name
 
 form["form__input"].addEventListener("input", () => {
-  const inputValue = form["form__input"].value.toLowerCase;
-  const name = document.querySelectorAll("user__name");
+  const inputValue = form["form__input"].value.toLowerCase();
+  const name = document.querySelectorAll(".user__name");
 
   name.forEach((item) => {
     if (item.lastElementChild.textContent.toLowerCase().includes(inputValue)) {
@@ -74,3 +74,15 @@ const updateUI = (data) => {
     `;
   });
 };
+
+// delete user
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList[0] === "user__delete--btn") {
+    e.target.parentElement.remove();
+  }
+
+  if (!user.children.length) {
+    clearBtn.classList.add("hidden");
+  }
+});

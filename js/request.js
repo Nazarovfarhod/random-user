@@ -2,7 +2,7 @@
 // const { json } = require("stream/consumers");
 
 // api
-const API = "https://randomuser.me/api/?results=9";
+const API = "https://randomuser.me/api/?results=18";
 
 // for leader
 const overlay = document.getElementById("overlay");
